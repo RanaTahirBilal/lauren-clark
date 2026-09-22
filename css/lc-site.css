@@ -1,0 +1,167 @@
+/* Lauren Clark (TailsAway) site. Built on the MegaOne "cafe" demo shell fonts (Raleway, Source Sans Pro).
+   All site styles use the lc- prefix. Loaded last. Warm brown and terracotta palette.
+   No image of her on this build: photos are dogs from her own site. */
+:root{
+  --lc-ink:#2A2019;       /* 15.92 on white */
+  --lc-muted:#5A4E45;     /*  8.04 on white, 7.49 on --lc-soft */
+  --lc-soft:#FBF6F0;
+  --lc-acc:#D9733B;       /* terracotta: rules, bars, icons only (3.25 on white) */
+  --lc-acc-ink:#9A4A1C;   /*  6.23 on white, 5.80 on --lc-soft: small text on light */
+  --lc-acc-lift:#F4B183;  /*  8.69 on --lc-ink: small text on dark */
+  --lc-green:#D9733B;
+  --lc-line:#EADFD3;
+}
+
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:'Source Sans Pro',Arial,sans-serif;color:var(--lc-ink);background:#fff;font-size:17px;line-height:1.7;margin:0}
+h1,h2,h3,.lc-brand{font-family:'Raleway',Arial,sans-serif}
+a{color:var(--lc-acc-ink)}
+a:hover{color:var(--lc-ink)}
+img{max-width:100%;height:auto;display:block}
+p{color:var(--lc-muted)}
+
+.lc-skip{position:absolute;left:-999px;top:0;background:#fff;color:var(--lc-ink);padding:8px 14px;z-index:100}
+.lc-skip:focus{left:8px}
+
+/* Header: fixed at top (the demo pinned its nav to the foot of the hero) */
+.lc-header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(42,32,25,.94);backdrop-filter:blur(6px)}
+.lc-header-row{display:flex;align-items:center;justify-content:space-between;height:68px}
+.lc-brand{color:#fff;font-weight:800;font-size:19px;text-decoration:none;letter-spacing:.2px}
+.lc-brand span{color:var(--lc-acc-lift);font-weight:600}
+.lc-brand:hover{color:#fff}
+.lc-nav{display:flex;gap:26px;align-items:center}
+.lc-nav a{color:#E6EEF1;font-weight:600;font-size:15px;text-decoration:none}
+.lc-nav a:hover{color:var(--lc-acc-lift)}
+.lc-nav .lc-nav-cta{background:var(--lc-acc-lift);color:var(--lc-ink);padding:8px 18px;border-radius:30px}
+.lc-nav .lc-nav-cta:hover{background:#fff;color:var(--lc-ink)}
+.lc-burger{display:none;background:none;border:0;color:#fff;font-size:24px;padding:6px 8px;cursor:pointer}
+
+.lc-drawer{position:fixed;top:0;right:0;bottom:0;width:300px;max-width:85vw;background:var(--lc-ink);z-index:60;transform:translateX(100%);transition:transform .3s ease;padding:70px 30px 30px;visibility:hidden}
+.lc-drawer.is-open{transform:none;visibility:visible}
+.lc-drawer nav a{display:block;color:#fff;font-family:'Raleway',Arial,sans-serif;font-weight:600;font-size:20px;text-decoration:none;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+.lc-drawer nav a:hover{color:var(--lc-acc-lift)}
+.lc-drawer-close{position:absolute;top:18px;right:20px;background:none;border:0;color:#fff;font-size:26px;cursor:pointer}
+.lc-drawer-note{color:#C9D3D8;font-size:14px;margin-top:24px}
+
+/* Hero. The demo's .background-carousal carried a carousel and absolute slabs; reset them. */
+.lc-hero{position:relative;min-height:100vh;padding:140px 0 90px;
+  background:#2A2019 url(../img/hero.jpg) center right/cover no-repeat;display:flex;align-items:center}
+.lc-hero::before{content:"";position:absolute;inset:0; /* measured: lede needs the dark zone to reach ~60% */
+  background:linear-gradient(90deg,rgba(30,22,16,.93) 0%,rgba(30,22,16,.88) 44%,rgba(30,22,16,.5) 60%,rgba(30,22,16,0) 78%)}
+.lc-hero .container{position:relative}
+.lc-hero-text{max-width:660px}
+.lc-hero-lede{max-width:560px}
+.lc-hero h1{color:#fff;font-weight:800;font-size:48px;line-height:1.1;margin:10px 0 20px}
+.lc-hero-lede{color:#E6EEF1;font-size:19px}
+.lc-hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+
+.lc-eyebrow{text-transform:uppercase;letter-spacing:2px;font-weight:700;font-size:13px;color:var(--lc-acc-ink);margin-bottom:8px}
+.lc-eyebrow-lift{color:var(--lc-acc-lift)}
+
+.lc-btn{display:inline-block;font-family:'Raleway',Arial,sans-serif;font-weight:700;font-size:15px;padding:13px 28px;border-radius:40px;text-decoration:none;border:2px solid transparent;cursor:pointer}
+.lc-btn-solid{background:var(--lc-acc-lift);color:var(--lc-ink)}
+.lc-btn-solid:hover{background:#fff;color:var(--lc-ink)}
+.lc-btn-ghost{border-color:#fff;color:#fff}
+.lc-btn-ghost:hover{background:#fff;color:var(--lc-ink)}
+
+.lc-section{padding:96px 0}
+.lc-soft{background:var(--lc-soft)}
+.lc-h2{font-size:36px;font-weight:700;line-height:1.2;margin-bottom:22px;color:var(--lc-ink)}
+.lc-h2::after{content:"";display:block;width:56px;height:4px;background:var(--lc-green);margin-top:16px;border-radius:2px}
+.lc-h3{font-size:22px;font-weight:700;margin:34px 0 14px}
+
+.lc-figure{margin:0;border-radius:14px;overflow:hidden;box-shadow:0 18px 40px rgba(42,32,25,.14)}
+.lc-figure-tall{margin-top:28px;max-width:420px}
+
+.lc-cards{margin-top:60px}
+.lc-card{background:#fff;border:1px solid var(--lc-line);border-top:4px solid var(--lc-acc);border-radius:12px;padding:30px 26px;height:100%}
+.lc-card i{font-size:30px;color:var(--lc-acc);margin-bottom:14px}
+.lc-card h3{font-size:20px;font-weight:700;margin-bottom:10px;color:var(--lc-ink)}
+.lc-card p{margin:0}
+.lc-cards .col-md-4{margin-bottom:24px}
+.lc-card-plain{border-top-color:var(--lc-green)}
+
+.lc-list{padding-left:18px;margin:0}
+.lc-list li{color:var(--lc-muted);margin-bottom:10px}
+.lc-list strong{color:var(--lc-ink)}
+.lc-small{font-size:15px}
+
+.lc-timeline{list-style:none;padding:0;margin:0;border-left:3px solid var(--lc-acc)}
+.lc-timeline li{position:relative;padding:0 0 22px 28px}
+.lc-timeline li::before{content:"";position:absolute;left:-9px;top:6px;width:15px;height:15px;border-radius:50%;background:#fff;border:3px solid var(--lc-acc)}
+.lc-timeline h3{font-size:19px;font-weight:700;margin:0 0 2px;color:var(--lc-ink)}
+.lc-timeline p{margin:0}
+
+/* Quote bands */
+.lc-band{position:relative;padding:110px 0;background:#2A2019 center/cover no-repeat;color:#fff}
+.lc-band::before{content:"";position:absolute;inset:0;background:rgba(30,22,16,.84)}
+.lc-band .container{position:relative;max-width:900px;text-align:center}
+.lc-band-a{background-image:url(../img/company.jpg);background-position:center 30%}
+.lc-band-b{background:linear-gradient(135deg,#2A2019 0%,#4A2E1E 100%)}
+.lc-band-b::before{display:none}
+.lc-quote-portrait{width:150px;height:150px;object-fit:cover;object-position:center 22%;border-radius:50%;border:4px solid var(--lc-acc-lift);margin:0 auto 28px}
+.lc-quote{margin:0}
+.lc-quote p{color:#fff;font-family:'Raleway',Arial,sans-serif;font-weight:600;font-size:32px;line-height:1.35}
+.lc-quote footer{color:var(--lc-acc-lift);font-weight:700;margin-top:14px;font-size:16px}
+.lc-band-note{color:#E6EEF1;margin-top:24px;font-size:17px}
+
+.lc-gallery figure{margin:0 0 24px;border-radius:12px;overflow:hidden}
+.lc-gallery img{transition:transform .5s ease}
+.lc-gallery figure:hover img{transform:scale(1.04)}
+.lc-disclosure{margin-top:10px;padding:16px 20px;background:var(--lc-soft);border-left:4px solid var(--lc-acc);color:var(--lc-ink);font-size:15px;border-radius:6px}
+
+/* Contact */
+.lc-contact{background:var(--lc-ink);padding:96px 0}
+.lc-contact .lc-h2{color:#fff}
+.lc-contact p{color:#C9D3D8}
+.lc-contact-line{color:#E6EEF1 !important}
+.lc-contact-line i{color:var(--lc-acc-lift);width:22px}
+.lc-contact a{color:var(--lc-acc-lift)}
+.lc-contact a:hover{color:#fff}
+.lc-form label{display:block;color:#fff;font-weight:600;font-size:15px;margin:14px 0 6px}
+.lc-form input,.lc-form textarea{width:100%;background:#3A2E25;border:1px solid #5E4E42;color:#fff;border-radius:8px;padding:12px 14px;font-size:16px}
+.lc-form input:focus,.lc-form textarea:focus{outline:2px solid var(--lc-acc-lift);border-color:var(--lc-acc-lift)}
+.lc-form .lc-btn{margin-top:8px}
+.lc-form-note{margin:10px 0 6px}
+.lc-honey{display:none !important}
+
+.lc-foot{background:#1E1712;padding:22px 0}
+.lc-foot p{color:#C9D3D8;margin:0;font-size:14px;text-align:center}
+
+a:focus-visible,button:focus-visible{outline:3px solid var(--lc-acc-lift);outline-offset:2px}
+
+@media (max-width:991px){
+  .lc-nav{display:none}
+  .lc-burger{display:block}
+  .lc-hero{background-position:72% center}
+  .lc-hero::before{background:linear-gradient(180deg,rgba(30,22,16,.72) 0%,rgba(30,22,16,.9) 45%)}
+  .lc-hero h1{font-size:40px}
+  .lc-section{padding:70px 0}
+  .lc-h2{font-size:30px}
+  .lc-quote p{font-size:25px}
+}
+@media (max-width:575px){
+  .lc-hero h1{font-size:34px}
+  .lc-hero-lede{font-size:17px}
+  .lc-brand span{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .lc-drawer,.lc-gallery img{transition:none}
+}
+
+/* bundle.min.css sets "a:focus, button:focus { color: inherit }" (0,1,1), which beats
+   single-class colours and made the focused drawer close button ink on ink. Restate them. */
+.lc-drawer-close:focus,.lc-burger:focus,.lc-brand:focus{color:#fff}
+.lc-nav a:focus{color:#E6EEF1}
+.lc-nav .lc-nav-cta:focus,.lc-btn-solid:focus{color:var(--lc-ink)}
+.lc-btn-ghost:focus{color:#fff}
+.lc-drawer nav a:focus{color:#fff}
+.lc-contact a:focus{color:var(--lc-acc-lift)}
+.lc-skip:focus{color:var(--lc-ink)}
+
+/* Lauren Clark additions */
+.lc-card i{color:var(--lc-acc-ink)}
+.lc-gallery img{width:100%;aspect-ratio:1/1;object-fit:cover}
+.lc-band-a{background-image:url(../img/walk.jpg);background-position:center 40%}
+.lc-certs li{margin-bottom:8px}
